@@ -35,7 +35,7 @@ $headerTextV9Style = array('name' => 'Verdana', 'color' => '191970','bold' => fa
 $headerRightAlignStyle = array('alignment' => 'right');
 $headerLeftAlignStyle = array('alignment' => 'left');
 $footerTextStyle = array('name' => 'Tahoma', 'color' => '191970','bold' => false,'size' => '8');
-$tableStyle = array('cellMarginTop'=>'0', 'cellMarginBottom'=>'0');
+$tableStyle = array('cellMarginTop'=>'0', 'cellMarginBottom'=>'-10');
 
 
 // Adding an empty Section to the document...
@@ -46,16 +46,17 @@ $section = $phpWord -> createSection($SectionStyle);
 //Adding header to the list
 $header = $section->createHeader();
 
-$header->addText('Nick Halle				', $titleStyle, $headerRightAlignStyle); 
+//$header->addText('Nick Halle				', $titleStyle, $headerRightAlignStyle); 
 //Adding line1
-$header->addLine($lineStyle);
+//$header->addLine($lineStyle);
 
 //Adding main header text
 $table=$header->addTable($tableStyle);
 
-            //??another version of Title - without long line
-            //$table->addRow();
-            //$table->addCell(3600)->addText('Nick Halle', $titleStyle, array('underline'=>'single'));
+$table->addRow();
+$table->addCell(4000);
+$table->addCell(4500);
+$table->addCell(3600)->addText('Nick Halle', $titleStyle, array('underline'=>'single'));
 
 $table->addRow();
 $table->addCell(4000)->addText('RECHNUNG № 0137', $headerTextBoldV11Style, array ('spaceAfter' => '0','spaceAfter' => '0'));
