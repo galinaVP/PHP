@@ -35,7 +35,7 @@ $headerTextV9Style = array('name' => 'Verdana', 'color' => '191970','bold' => fa
 $headerRightAlignStyle = array('alignment' => 'right');
 $headerLeftAlignStyle = array('alignment' => 'left');
 $footerTextStyle = array('name' => 'Tahoma', 'color' => '191970','bold' => false,'size' => '8');
-$tableStyle = array('cellMarginTop'=>'0', 'cellMarginBottom'=>'-10');
+$tableStyle = array('cellMarginTop'=>'0', 'cellMarginBottom'=>'0');
 
 
 // Adding an empty Section to the document...
@@ -71,7 +71,8 @@ $table->addCell(2000)->addPreserveText('<w:br/><w:br/><w:br/><w:br/>Seite {PAGE}
 $table->addRow();
 $table->addCell(1000);
 $table->addCell(4500);
-$table->addCell(2000)->addField('DATE', array('dateformat' => 'dd.MM.yyyy'), array('PreserveFormat'),$headerTextV9Style);
+$table->addCell(2000)->addText('date:17/09/2017',$headerTextV9Style, $headerRightAlignStyle);
+//$table->addCell(2000)->addField('DATE', array('dateformat' => 'dd.MM.yyyy'), array('PreserveFormat'),$headerTextV9Style);
 
 $header->addLine($lineStyleBold);
 
